@@ -10,8 +10,10 @@ console.log('Connected!\n');
 try {
     // eslint-disable-next-line
     await collections?.users?.insertOne(<any>{
-        age: 25
+        name: "Carlos Silva",  // String com mais de 5 caracteres
+        isAdmin: false         // Booleano obrigatório
     });
+    console.log("Documento inserido com sucesso!");
 }
 catch (error) {
     console.log(error.message);
