@@ -10,9 +10,12 @@ console.log('Connected!\n');
 try {
     // eslint-disable-next-line
     await collections?.users?.insertOne(<any>{
-        age: 25
+        name: "Carlos Silva",  // Precisa ter mais de 5 letras
+        isAdmin: false         // Precisa ser true ou false (sem aspas)
     });
+    console.log("Documento inserido com sucesso!");
 }
+
 catch (error) {
     console.log(error.message);
     for (const validationMessage of error.errInfo.details.schemaRulesNotSatisfied) {
